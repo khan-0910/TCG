@@ -31,31 +31,64 @@ function loadCart() {
     
     cart.forEach(item => {
         const product = dataManager.getProductById(item.productId);
-        if (!product) return;
+        
+        // If product doesn't exist, show error message but allow removal
+        if (!product) {
+            cartHTML += `
+                <div class="cart-item" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <div class="cart-item-image">
+                        <img src="https://via.placeholder.com/120?text=Product+Not+Found" alt="Product Not Found">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>Product Not Found</h3>
+                        <p style="color: #856404;">This product may have been deleted.</p>
+                        <p style="color: #856404; font-weight: 600;">Please remove it from your cart.</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="btn-remove" onclick="removeFromCart(${item.productId})">Remove</button>
+                    </div>
+                </div>
+            `;
+            return;
+        }
         
         const subtotal = product.price * item.quantity;
-        const stockWarning = item.quantity > product.stock ? 
-            `<p class="stock-warning">⚠️ Only ${product.stock} available in stock</p>` : '';
+        
+        // Check stock status
+        let stockWarning = '';
+        let outOfStockMessage = '';
+        
+        if (product.stock === 0) {
+            outOfStockMessage = `<p class="stock-warning" style="color: #e74c3c; font-weight: 600;">❌ OUT OF STOCK - Please remove this item to proceed</p>`;
+        } else if (item.quantity > product.stock) {
+            stockWarning = `<p class="stock-warning">⚠️ Only ${product.stock} available in stock</p>`;
+        }
         
         cartHTML += `
-            <div class="cart-item">
+            <div class="cart-item" ${product.stock === 0 ? 'style="background: #ffebee; border-left: 4px solid #e74c3c;"' : ''}>
                 <div class="cart-item-image">
                     <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/120?text=No+Image'">
+                    ${product.stock === 0 ? '<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(231, 76, 60, 0.9); color: white; padding: 0.5rem; border-radius: 5px; font-weight: 600; font-size: 0.9rem;">OUT OF STOCK</div>' : ''}
                 </div>
                 <div class="cart-item-details">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <div class="cart-item-price">₹${product.price.toFixed(2)} each</div>
+                    ${product.stock > 0 ? `
                     <div class="quantity-controls">
                         <button onclick="updateQuantity(${product.id}, ${item.quantity - 1})">-</button>
                         <span>${item.quantity}</span>
                         <button onclick="updateQuantity(${product.id}, ${item.quantity + 1})" ${item.quantity >= product.stock ? 'disabled' : ''}>+</button>
                     </div>
+                    ` : ''}
                     ${stockWarning}
+                    ${outOfStockMessage}
                 </div>
                 <div class="cart-item-actions">
-                    <div class="item-subtotal">₹${subtotal.toFixed(2)}</div>
-                    <button class="btn-remove" onclick="removeFromCart(${product.id})">Remove</button>
+                    ${product.stock > 0 ? `<div class="item-subtotal">₹${subtotal.toFixed(2)}</div>` : ''}
+                    <button class="btn-remove" onclick="removeFromCart(${product.id})" style="${product.stock === 0 ? 'background: #e74c3c; font-size: 1.1rem; padding: 0.8rem 1.5rem;' : ''}">
+                        ${product.stock === 0 ? '🗑️ Remove from Cart' : 'Remove'}
+                    </button>
                 </div>
             </div>
         `;
@@ -68,9 +101,22 @@ function loadCart() {
     const tax = total * 0.18; // 18% GST
     const grandTotal = total + tax;
     
+    // Check if any items are out of stock
+    const hasOutOfStock = cart.some(item => {
+        const product = dataManager.getProductById(item.productId);
+        return !product || product.stock === 0 || product.stock < item.quantity;
+    });
+    
     cartHTML += `
         <div class="cart-summary">
             <h3>Order Summary</h3>
+            ${hasOutOfStock ? `
+            <div style="background: #ffebee; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; border-left: 4px solid #e74c3c;">
+                <p style="color: #c62828; font-weight: 600; margin: 0;">
+                    ⚠️ Some items are out of stock or have insufficient quantity. Please remove them or update quantities to proceed.
+                </p>
+            </div>
+            ` : ''}
             <div class="summary-row">
                 <span class="summary-label">Subtotal:</span>
                 <span>₹${total.toFixed(2)}</span>
@@ -84,7 +130,9 @@ function loadCart() {
                 <span>₹${grandTotal.toFixed(2)}</span>
             </div>
             <div class="checkout-section">
-                <button class="btn-checkout" onclick="checkout()">Proceed to Checkout</button>
+                <button class="btn-checkout" onclick="checkout()" ${hasOutOfStock ? 'disabled style="background: #95a5a6; cursor: not-allowed;"' : ''}>
+                    ${hasOutOfStock ? '⚠️ Fix Cart Issues to Checkout' : 'Proceed to Checkout'}
+                </button>
                 <a href="index.html" class="btn-continue">Continue Shopping</a>
             </div>
         </div>
@@ -130,16 +178,20 @@ function checkout() {
     }
     
     // Check stock availability
-    let stockIssue = false;
+    let stockIssues = [];
     cart.forEach(item => {
         const product = dataManager.getProductById(item.productId);
-        if (!product || product.stock < item.quantity) {
-            stockIssue = true;
+        if (!product) {
+            stockIssues.push(`Product ID ${item.productId} not found`);
+        } else if (product.stock === 0) {
+            stockIssues.push(`${product.name} is out of stock`);
+        } else if (product.stock < item.quantity) {
+            stockIssues.push(`${product.name}: Only ${product.stock} available (you have ${item.quantity} in cart)`);
         }
     });
     
-    if (stockIssue) {
-        showToast('Some items in your cart are out of stock. Please update quantities.', 'error');
+    if (stockIssues.length > 0) {
+        alert('Cannot proceed to checkout:\n\n' + stockIssues.join('\n') + '\n\nPlease remove out-of-stock items or update quantities.');
         return;
     }
     
