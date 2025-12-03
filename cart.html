@@ -257,7 +257,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>⚡ PokéCards Store</h1>
+                    <h1>🐸 Froakie_TCG's Store</h1>
                 </div>
                 <nav>
                     <ul>
@@ -289,10 +289,65 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 PokéCards Store. All rights reserved.</p>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Froakie_TCG's Store</h3>
+                <p>We are passionate Pokemon TCG collectors and sellers, offering authentic cards at competitive prices. Every card is carefully verified for authenticity and condition.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong> froakietcg@gmail.com</p>
+                <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+                <p><strong>WhatsApp:</strong> +91 XXXXX XXXXX</p>
+                <p><strong>Instagram:</strong> @froakie_tcg</p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 10 AM - 8 PM</p>
+                <p>Sunday: 11 AM - 6 PM</p>
+                <p>We ship across India!</p>
+            </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Froakie_TCG's Store. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+</style>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
@@ -302,4 +357,5 @@
     <script src="js/cart.js"></script>
 </body>
 </html>
+
 
