@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation & Refunds - PokéCards Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .policy-container h1 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+        .policy-container h2 {
+            color: var(--dark-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-container p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .policy-container ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-container li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>⚡ PokéCards Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Store</a></li>
+                        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Policy Content -->
+    <div class="policy-container">
+        <h1>Cancellation & Refund Policy</h1>
+        <p><strong>Last Updated:</strong> January 2025</p>
+
+        <h2>1. Order Cancellation</h2>
+        <p>We understand that circumstances change. Here's our cancellation policy:</p>
+        <ul>
+            <li><strong>Before Shipment:</strong> Orders can be cancelled free of charge before they are shipped. Full refund will be processed.</li>
+            <li><strong>After Shipment:</strong> Once an order has been shipped, it cannot be cancelled. Please refer to our return policy.</li>
+            <li><strong>How to Cancel:</strong> Contact us at support@pokecards-store.com with your order number.</li>
+        </ul>
+
+        <h2>2. Refund Policy</h2>
+        <p>We want you to be completely satisfied with your purchase. Our refund policy includes:</p>
+        
+        <h3>2.1 Eligible for Refund:</h3>
+        <ul>
+            <li>Damaged or defective cards upon arrival</li>
+            <li>Wrong item shipped</li>
+            <li>Item significantly not as described</li>
+            <li>Order cancelled before shipment</li>
+        </ul>
+
+        <h3>2.2 Not Eligible for Refund:</h3>
+        <ul>
+            <li>Change of mind after shipment</li>
+            <li>Cards opened from sealed packaging (unless defective)</li>
+            <li>Normal wear and tear</li>
+            <li>Items purchased on final sale or clearance</li>
+        </ul>
+
+        <h2>3. Return Process</h2>
+        <p>To initiate a return:</p>
+        <ol>
+            <li>Contact us within 7 days of receiving your order</li>
+            <li>Provide order number and reason for return</li>
+            <li>Send clear photos of the item (if damaged/defective)</li>
+            <li>Wait for return authorization</li>
+            <li>Ship item back in original condition and packaging</li>
+        </ol>
+
+        <h2>4. Refund Timeline</h2>
+        <ul>
+            <li><strong>Inspection:</strong> 2-3 business days after we receive the return</li>
+            <li><strong>Approval:</strong> Email notification sent once approved</li>
+            <li><strong>Processing:</strong> 5-7 business days to original payment method</li>
+            <li><strong>Bank Processing:</strong> Additional 3-5 business days depending on your bank</li>
+        </ul>
+
+        <h2>5. Refund Methods</h2>
+        <p>Refunds will be processed to the original payment method:</p>
+        <ul>
+            <li><strong>Credit/Debit Cards:</strong> Refunded to the same card</li>
+            <li><strong>UPI:</strong> Refunded to the same UPI ID</li>
+            <li><strong>Net Banking:</strong> Refunded to the same bank account</li>
+            <li><strong>Wallets:</strong> Refunded to the same wallet</li>
+        </ul>
+
+        <h2>6. Partial Refunds</h2>
+        <p>Partial refunds may be granted in cases of:</p>
+        <ul>
+            <li>Item returned without original packaging</li>
+            <li>Item showing signs of use</li>
+            <li>Item returned after 7 days but within 14 days</li>
+        </ul>
+
+        <h2>7. Shipping Costs</h2>
+        <ul>
+            <li><strong>Our Error:</strong> We cover return shipping costs</li>
+            <li><strong>Customer's Choice:</strong> Customer covers return shipping costs</li>
+            <li><strong>Original Shipping:</strong> Non-refundable unless item is defective</li>
+        </ul>
+
+        <h2>8. Exchanges</h2>
+        <p>We currently do not offer direct exchanges. Please return the item for a refund and place a new order for the desired item.</p>
+
+        <h2>9. Damaged or Defective Items</h2>
+        <p>If you receive a damaged or defective item:</p>
+        <ul>
+            <li>Contact us immediately with photos</li>
+            <li>We will arrange for a replacement or full refund</li>
+            <li>No need to return the damaged item in most cases</li>
+            <li>Full refund including shipping costs</li>
+        </ul>
+
+        <h2>10. Contact Information</h2>
+        <p>For cancellations, returns, or refund inquiries:</p>
+        <ul>
+            <li><strong>Email:</strong> support@pokecards-store.com</li>
+            <li><strong>Response Time:</strong> Within 24 hours</li>
+            <li><strong>Order Number Required:</strong> Please include in all communications</li>
+        </ul>
+
+        <h2>11. Policy Updates</h2>
+        <p>We reserve the right to update this policy at any time. Changes will be posted on this page with an updated revision date.</p>
+
+        <a href="index.html" class="back-link">← Back to Store</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PokéCards Store. All rights reserved.</p>
+            <p>
+                <a href="terms.html" style="color: white; margin: 0 10px;">Terms & Conditions</a> |
+                <a href="privacy.html" style="color: white; margin: 0 10px;">Privacy Policy</a> |
+                <a href="shipping.html" style="color: white; margin: 0 10px;">Shipping Policy</a> |
+                <a href="contact.html" style="color: white; margin: 0 10px;">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        // Update cart count
+        document.addEventListener('DOMContentLoaded', function() {
+            const count = dataManager.getCartItemCount();
+            document.getElementById('cart-count').textContent = count;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PokéCards Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .policy-container h1 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+        .policy-container h2 {
+            color: var(--dark-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-container p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .contact-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .contact-card p {
+            margin-bottom: 0.5rem;
+        }
+        .contact-form {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: var(--success-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #229954;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+        .faq-section {
+            margin: 2rem 0;
+        }
+        .faq-item {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .faq-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>⚡ PokéCards Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Store</a></li>
+                        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <div class="policy-container">
+        <h1>Contact Us</h1>
+        <p>We're here to help! Whether you have questions about products, orders, or need support, we're just a message away.</p>
+
+        <h2>Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📧 Email Support</h3>
+                <p><strong>General Inquiries:</strong></p>
+                <p>support@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>📦 Order Support</h3>
+                <p><strong>Order Issues:</strong></p>
+                <p>orders@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 12 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>💳 Payment Support</h3>
+                <p><strong>Payment Issues:</strong></p>
+                <p>payments@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 6 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>🚚 Shipping Support</h3>
+                <p><strong>Shipping Inquiries:</strong></p>
+                <p>shipping@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>↩️ Returns & Refunds</h3>
+                <p><strong>Return Requests:</strong></p>
+                <p>returns@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>🏢 Business Inquiries</h3>
+                <p><strong>Partnerships:</strong></p>
+                <p>business@pokecards-store.com</p>
+                <p><strong>Response Time:</strong> Within 48 hours</p>
+            </div>
+        </div>
+
+        <h2>Send Us a Message</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="order-number">Order Number (if applicable)</label>
+                    <input type="text" id="order-number" name="order-number" placeholder="e.g., #123456789">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="order">Order Inquiry</option>
+                        <option value="product">Product Question</option>
+                        <option value="shipping">Shipping Issue</option>
+                        <option value="payment">Payment Problem</option>
+                        <option value="return">Return/Refund Request</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="feedback">Feedback/Suggestion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Please provide as much detail as possible..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <h2>Business Hours</h2>
+        <div class="contact-card">
+            <p><strong>Customer Support:</strong></p>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+            <p>Saturday: 10:00 AM - 4:00 PM EST</p>
+            <p>Sunday: Closed</p>
+            <p><em>Email support available 24/7 - we'll respond during business hours</em></p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <h3>How long does shipping take?</h3>
+                <p>Standard shipping takes 5-7 business days. Express shipping is available for 2-3 day delivery. See our <a href="shipping.html">Shipping Policy</a> for details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept UPI, Credit/Debit Cards, Net Banking, and Digital Wallets through Razorpay's secure payment gateway.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I cancel my order?</h3>
+                <p>Yes! Orders can be cancelled before shipment. Contact us immediately at orders@pokecards-store.com with your order number.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I track my order?</h3>
+                <p>You'll receive a tracking number via email once your order ships. You can track it on our website or the carrier's website.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is your return policy?</h3>
+                <p>We accept returns within 7 days of delivery for damaged or defective items. See our <a href="refund-policy.html">Refund Policy</a> for complete details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Are the cards authentic?</h3>
+                <p>Yes! All our Pokemon cards are 100% authentic. We source directly from authorized distributors and verify all products.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you ship internationally?</h3>
+                <p>Yes, we ship to select countries. International shipping takes 10-21 business days. Customs fees may apply.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I check my order status?</h3>
+                <p>Email us at orders@pokecards-store.com with your order number, and we'll provide an immediate update.</p>
+            </div>
+        </div>
+
+        <h2>Social Media</h2>
+        <div class="contact-card">
+            <p>Follow us for updates, new releases, and special offers:</p>
+            <p><strong>Instagram:</strong> @pokecards_store</p>
+            <p><strong>Twitter:</strong> @pokecards_store</p>
+            <p><strong>Facebook:</strong> /pokecards.store</p>
+            <p><strong>Discord:</strong> Join our community server</p>
+        </div>
+
+        <h2>Mailing Address</h2>
+        <div class="contact-card">
+            <p><strong>PokéCards Store</strong></p>
+            <p>123 Trading Card Lane</p>
+            <p>Commerce City, State 12345</p>
+            <p>India</p>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Store</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PokéCards Store. All rights reserved.</p>
+            <p>
+                <a href="terms.html" style="color: white; margin: 0 10px;">Terms & Conditions</a> |
+                <a href="refund-policy.html" style="color: white; margin: 0 10px;">Refund Policy</a> |
+                <a href="shipping.html" style="color: white; margin: 0 10px;">Shipping Policy</a> |
+                <a href="privacy.html" style="color: white; margin: 0 10px;">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const count = dataManager.getCartItemCount();
+            document.getElementById('cart-count').textContent = count;
+
+            // Handle form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                const toast = document.getElementById('toast');
+                toast.textContent = 'Message sent successfully! We\'ll respond within 24 hours.';
+                toast.className = 'toast success show';
+                
+                setTimeout(() => {
+                    toast.className = 'toast';
+                }, 3000);
+
+                // Reset form
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

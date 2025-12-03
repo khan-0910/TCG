@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Policy - PokéCards Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .policy-container h1 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 1rem;
+        }
+        .policy-container h2 {
+            color: var(--dark-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-container p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .policy-container ul, .policy-container ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-container li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .policy-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .policy-container th, .policy-container td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .policy-container th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>⚡ PokéCards Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Store</a></li>
+                        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Policy Content -->
+    <div class="policy-container">
+        <h1>Shipping Policy</h1>
+        <p><strong>Last Updated:</strong> January 2025</p>
+
+        <h2>1. Shipping Methods & Costs</h2>
+        <p>We offer multiple shipping options to meet your needs:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Shipping Method</th>
+                    <th>Delivery Time</th>
+                    <th>Cost</th>
+                    <th>Tracking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Standard Shipping</td>
+                    <td>5-7 business days</td>
+                    <td>$4.99</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Express Shipping</td>
+                    <td>2-3 business days</td>
+                    <td>$9.99</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Overnight Shipping</td>
+                    <td>1 business day</td>
+                    <td>$19.99</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Free Shipping</td>
+                    <td>5-7 business days</td>
+                    <td>Free (orders over $50)</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Processing Time</h2>
+        <ul>
+            <li><strong>Standard Orders:</strong> 1-2 business days</li>
+            <li><strong>High-Value Orders (over $500):</strong> 2-3 business days (additional verification)</li>
+            <li><strong>Pre-Orders:</strong> Ships on or after release date</li>
+            <li><strong>Custom Orders:</strong> 3-5 business days</li>
+        </ul>
+        <p><em>Note: Processing time is separate from shipping time. Orders placed after 2 PM EST will be processed the next business day.</em></p>
+
+        <h2>3. Shipping Locations</h2>
+        <h3>3.1 Domestic Shipping (India)</h3>
+        <ul>
+            <li>We ship to all states and union territories</li>
+            <li>PO Boxes accepted</li>
+            <li>APO/FPO addresses accepted</li>
+        </ul>
+
+        <h3>3.2 International Shipping</h3>
+        <ul>
+            <li>Available to select countries</li>
+            <li>Delivery time: 10-21 business days</li>
+            <li>Customs fees and import duties are customer's responsibility</li>
+            <li>International orders may require additional documentation</li>
+        </ul>
+
+        <h2>4. Order Tracking</h2>
+        <ul>
+            <li>Tracking number provided via email once shipped</li>
+            <li>Track your order on our website or carrier's website</li>
+            <li>Updates available in real-time</li>
+            <li>Email notifications for key shipping milestones</li>
+        </ul>
+
+        <h2>5. Packaging</h2>
+        <p>We take great care in packaging your Pokemon cards:</p>
+        <ul>
+            <li><strong>Individual Cards:</strong> Sleeved, top-loaded, and bubble-wrapped</li>
+            <li><strong>Sealed Products:</strong> Bubble-wrapped and boxed</li>
+            <li><strong>High-Value Items:</strong> Double-boxed with extra protection</li>
+            <li><strong>Graded Cards:</strong> Special protective packaging</li>
+            <li><strong>Eco-Friendly:</strong> Recyclable materials used when possible</li>
+        </ul>
+
+        <h2>6. Shipping Restrictions</h2>
+        <p>We cannot ship to:</p>
+        <ul>
+            <li>Countries under trade embargo</li>
+            <li>Addresses flagged for fraud</li>
+            <li>Locations where delivery is not possible</li>
+        </ul>
+
+        <h2>7. Delivery Issues</h2>
+        <h3>7.1 Lost Packages</h3>
+        <ul>
+            <li>Contact us if package is not delivered within expected timeframe</li>
+            <li>We will file a claim with the carrier</li>
+            <li>Replacement or refund provided once claim is approved</li>
+        </ul>
+
+        <h3>7.2 Damaged Packages</h3>
+        <ul>
+            <li>Inspect package upon delivery</li>
+            <li>Note any damage on delivery receipt</li>
+            <li>Contact us within 48 hours with photos</li>
+            <li>We will arrange replacement or refund</li>
+        </ul>
+
+        <h3>7.3 Incorrect Address</h3>
+        <ul>
+            <li>Verify shipping address before completing order</li>
+            <li>Contact us immediately if you notice an error</li>
+            <li>Address changes after shipment may incur additional fees</li>
+            <li>We are not responsible for packages delivered to incorrect addresses provided by customer</li>
+        </ul>
+
+        <h2>8. Signature Requirements</h2>
+        <ul>
+            <li><strong>Orders over $200:</strong> Signature required</li>
+            <li><strong>Orders over $500:</strong> Adult signature required</li>
+            <li><strong>High-Value Items:</strong> May require ID verification</li>
+        </ul>
+
+        <h2>9. Shipping Insurance</h2>
+        <ul>
+            <li>All orders automatically insured up to $100</li>
+            <li>Additional insurance available for high-value orders</li>
+            <li>Insurance covers loss and damage during transit</li>
+            <li>Claims must be filed within 30 days of shipment</li>
+        </ul>
+
+        <h2>10. Holidays and Delays</h2>
+        <ul>
+            <li>No shipping on major holidays</li>
+            <li>Delays possible during peak seasons (holidays, new releases)</li>
+            <li>Weather-related delays beyond our control</li>
+            <li>Carrier delays may occur without notice</li>
+        </ul>
+
+        <h2>11. Multiple Item Orders</h2>
+        <ul>
+            <li>Items may ship separately if from different warehouses</li>
+            <li>You will receive separate tracking numbers</li>
+            <li>No additional shipping charges for split shipments</li>
+        </ul>
+
+        <h2>12. Pre-Order Shipping</h2>
+        <ul>
+            <li>Pre-orders ship on or shortly after release date</li>
+            <li>Shipping method selected at time of order</li>
+            <li>Cannot combine pre-orders with in-stock items</li>
+            <li>Release dates subject to change by manufacturer</li>
+        </ul>
+
+        <h2>13. Expedited Shipping Cutoff</h2>
+        <p>For guaranteed delivery times:</p>
+        <ul>
+            <li><strong>Overnight:</strong> Order by 12 PM EST</li>
+            <li><strong>2-Day:</strong> Order by 2 PM EST</li>
+            <li><strong>Standard:</strong> Order by 5 PM EST</li>
+        </ul>
+
+        <h2>14. Undeliverable Packages</h2>
+        <ul>
+            <li>Packages returned as undeliverable will be refunded minus shipping costs</li>
+            <li>Customer responsible for providing correct address</li>
+            <li>Reshipment requires new shipping payment</li>
+        </ul>
+
+        <h2>15. Shipping Confirmation</h2>
+        <p>You will receive email notifications for:</p>
+        <ul>
+            <li>Order confirmation</li>
+            <li>Order processing</li>
+            <li>Shipment confirmation with tracking</li>
+            <li>Delivery confirmation</li>
+        </ul>
+
+        <h2>16. Contact for Shipping Questions</h2>
+        <p>For shipping inquiries:</p>
+        <ul>
+            <li><strong>Email:</strong> shipping@pokecards-store.com</li>
+            <li><strong>Support:</strong> support@pokecards-store.com</li>
+            <li><strong>Response Time:</strong> Within 24 hours</li>
+            <li><strong>Include:</strong> Order number and tracking number</li>
+        </ul>
+
+        <h2>17. Policy Updates</h2>
+        <p>We reserve the right to update this shipping policy at any time. Changes will be posted on this page with an updated revision date.</p>
+
+        <a href="index.html" class="back-link">← Back to Store</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PokéCards Store. All rights reserved.</p>
+            <p>
+                <a href="terms.html" style="color: white; margin: 0 10px;">Terms & Conditions</a> |
+                <a href="refund-policy.html" style="color: white; margin: 0 10px;">Refund Policy</a> |
+                <a href="privacy.html" style="color: white; margin: 0 10px;">Privacy Policy</a> |
+                <a href="contact.html" style="color: white; margin: 0 10px;">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const count = dataManager.getCartItemCount();
+            document.getElementById('cart-count').textContent = count;
+        });
+    </script>
+</body>
+</html>
