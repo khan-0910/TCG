@@ -150,7 +150,7 @@ function initializeRazorpayPayment(customerInfo, amountInPaise, totalAmount) {
             contact: customerInfo.phone
         },
         notes: {
-            store: 'PokéCards Store',
+            store: 'Froakie_TCG\'s Store',
             purchase_type: 'Pokemon Cards',
             delivery_type: customerInfo.deliveryType,
             address: `${customerInfo.address.line1}, ${customerInfo.address.city}, ${customerInfo.address.state} - ${customerInfo.address.pincode}`
