@@ -24,9 +24,9 @@ const RAZORPAY_CONFIG = {
     usdToInrRate: 83,
     
     // Store Information
-    storeName: 'PokéCards Store',
+    storeName: 'Froakie_TCG\'s Store',
     storeDescription: 'Pokemon Trading Cards Purchase',
-    storeLogo: 'https://cdn-icons-png.flaticon.com/512/188/188918.png',
+    storeLogo: 'https://orig10.deviantart.net/e689/f/2013/308/9/e/froakie_by_cl0setbr0ny-d6t1kvq.png',
     
     // Theme Color (matches your website theme)
     themeColor: '#e74c3c'
