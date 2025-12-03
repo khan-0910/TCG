@@ -203,7 +203,7 @@ function initializeRazorpayPayment(customerInfo, amountInPaise, totalAmount) {
 
 // Handle successful payment
 function handlePaymentSuccess(response, customerInfo, totalAmount) {
-    // Add payment details to customer info
+    // Add payment details
     customerInfo.date = new Date().toISOString();
     customerInfo.paymentId = response.razorpay_payment_id;
     customerInfo.paymentMethod = 'Razorpay';
@@ -214,25 +214,40 @@ function handlePaymentSuccess(response, customerInfo, totalAmount) {
     if (result.success) {
         showToast('Payment successful! Order placed.', 'success');
         
-        // Show success message
+        // Show success message with all details
         setTimeout(() => {
             const deliveryType = customerInfo.deliveryType === 'regular' ? 'Regular (5-7 days)' : 'Premium (2-3 days)';
             const successMessage = `
-🎉 Payment Successful!
+🎉 PAYMENT SUCCESSFUL!
 
-Order ID: #${result.order.id}
-Payment ID: ${response.razorpay_payment_id}
-Amount Paid: ₹${totalAmount.toFixed(2)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ORDER CONFIRMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Delivery Type: ${deliveryType}
-Delivery Charge: ₹${customerInfo.deliveryCharge}
+📦 ORDER ID: #${result.order.id}
+💳 PAYMENT ID: ${response.razorpay_payment_id}
+💰 AMOUNT PAID: ₹${totalAmount.toFixed(2)}
 
-Shipping Address:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DELIVERY DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚚 Delivery Type: ${deliveryType}
+💵 Delivery Charge: ₹${customerInfo.deliveryCharge}
+
+📍 Shipping Address:
 ${customerInfo.address.line1}
 ${customerInfo.address.line2 ? customerInfo.address.line2 + '\n' : ''}${customerInfo.address.landmark ? 'Near ' + customerInfo.address.landmark + '\n' : ''}${customerInfo.address.city}, ${customerInfo.address.state} - ${customerInfo.address.pincode}
 
-Thank you, ${customerInfo.name}!
-Your Pokemon cards will be shipped soon.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Your order has been confirmed!
+📧 Confirmation email sent to: ${customerInfo.email}
+📱 We'll contact you at: ${customerInfo.phone}
+
+⚠️ IMPORTANT: Save your Order ID for tracking!
+
+Thank you for shopping with Froakie_TCG's Store! 🐸
             `;
             
             alert(successMessage);
@@ -244,6 +259,7 @@ Your Pokemon cards will be shipped soon.
         showToast('Order creation failed: ' + result.message, 'error');
     }
 }
+
 
 // Handle payment failure
 function handlePaymentFailure(response) {
