@@ -245,6 +245,7 @@ class DataManager {
     // Order operations
     createOrder(customerInfo) {
         const cart = this.getCart();
+        
         if (cart.length === 0) {
             return { success: false, message: 'Cart is empty' };
         }
@@ -257,10 +258,10 @@ class DataManager {
             }
         }
 
-        // Create order
+        // Create order object
         const order = {
             id: Date.now(),
-            date: new Date().toISOString(),
+            date: customerInfo.date,
             customer: customerInfo,
             items: cart.map(item => {
                 const product = this.getProductById(item.productId);
@@ -271,27 +272,55 @@ class DataManager {
                     quantity: item.quantity
                 };
             }),
-            total: this.getCartTotal()
+            total: customerInfo.totalAmount,
+            status: 'pending',  // Initial status: pending, packed, shipped, delivered
+            statusUpdatedAt: customerInfo.date
         };
 
-        // Update stock
+        // Save order
+        const orders = this.getOrders();
+        orders.push(order);
+        this.saveOrders(orders);
+
+        // Update product stock
         cart.forEach(item => {
             this.updateStock(item.productId, item.quantity);
         });
 
-        // Save order
-        const orders = JSON.parse(localStorage.getItem('orders')) || [];
-        orders.push(order);
-        localStorage.setItem('orders', JSON.stringify(orders));
-
         // Clear cart
         this.clearCart();
 
-        return { success: true, order };
+        return { success: true, order: order };
     }
 
     getOrders() {
         return JSON.parse(localStorage.getItem('orders')) || [];
+    }
+
+    saveOrders(orders) {
+        localStorage.setItem('orders', JSON.stringify(orders));
+    }
+
+    // NEW: Get order by ID
+    getOrderById(orderId) {
+        const orders = this.getOrders();
+        return orders.find(order => order.id == orderId);
+    }
+
+    // NEW: Update order status
+    updateOrderStatus(orderId, newStatus) {
+        const orders = this.getOrders();
+        const order = orders.find(o => o.id == orderId);
+        
+        if (!order) {
+            return { success: false, message: 'Order not found' };
+        }
+        
+        order.status = newStatus;
+        order.statusUpdatedAt = new Date().toISOString();
+        
+        this.saveOrders(orders);
+        return { success: true, order: order };
     }
 }
 
